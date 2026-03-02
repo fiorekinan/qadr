@@ -1,0 +1,258 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #1e1e1e;
+}
+
+header {
+    background: #b7cdc4;
+}
+
+/* navbar */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.nav-links a {
+    margin-right: 20px;
+    text-decoration: none;
+    color: #5a67b2;
+}
+
+.brand {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 700;
+    color: #5a67b2;
+    margin-bottom: 5px;
+}
+
+
+/* hero */
+.hero {
+    min-height: 80vh;
+    position: relative;
+    padding: 200px 40px;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 200px;
+    color: #5f8f83;
+}
+
+.hero-content p {
+    color: #5f8f83;
+}
+
+/* images */
+.cloud,
+.star {
+    position: absolute;
+    pointer-events: none;
+}
+
+.cloud1 {
+    top: 80px;
+    right: 150px;
+    width: 250px;
+}
+
+.cloud2 {
+    bottom: 200px;
+    left: 150px;
+    width: 250px;
+}
+
+.cloud3 {
+    bottom: 30px;
+    right: 350px;
+    width: 250px;
+}
+
+.star1 {
+    top: 150px;
+    left: 120px;
+    width: 50;
+}
+
+.star2 {
+    bottom: 180px;
+    right: 300px;
+    width: 50px;
+}
+
+/* about */
+#about {
+    background: #e9e4d6;
+    padding: 120px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-box {
+    background: #e6c786;
+    padding: 30px;
+    max-width: 600px;
+    margin: auto;
+    border-radius: 25px;
+    position: relative;
+    z-index: 2;
+    color: #B59441;
+}
+
+.about-star {
+    position: absolute;
+    width: 50px;
+    pointer-events: none;
+}
+
+.star-left {
+    top: 60px;
+    left: 300px;
+}
+
+.star-right {
+    bottom: 60px;
+    right: 300px;
+}
+
+/* card */
+#dua {
+    background: #efefef;
+    padding: 200px 60px;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.dua-card {
+    flex: 1 1 400px;
+    max-width: 400px;
+    padding: 50px;
+    border-radius: 50px;
+    text-align: center;
+    color: white;
+}
+
+.sahoor {
+    background: #6f9f91;
+}
+
+.iftar {
+    background: #e7b356;
+}
+
+.dua-card h2 {
+    margin-bottom: 40px;
+    font-size: 42px;
+}
+
+.arabic {
+    margin-bottom: 60px;
+    font-size: 34px;
+}
+
+.dua-card .translate {
+    font-size: 24px;
+    line-height: 1.6;
+}
+
+/* footer */
+footer {
+    background: #6f9f91;
+
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+footer h2 {
+    font-size: 200px;
+    color: #f3e4c7;
+    margin: 0;
+}
+
+.copywrite {
+    color: #f3e4c7;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 60px;
+    }
+
+    .star {
+        display: none;
+    }
+
+    .cloud2 {
+        bottom: 130px;
+    }
+
+    footer h2 {
+        font-size: 60px;
+    }
+
+    nav {
+        padding: 20px;
+    }
+
+    .hero {
+        padding: 80px 20px;
+    }
+
+    #about {
+        padding: 60px 20px;
+    }
+
+    #dua {
+        padding: 60px 20px;
+        gap: 30px;
+    }
+
+    .dua-card {
+        padding: 35px 25px;
+        border-radius: 30px;
+    }
+
+    .dua-card h2 {
+        font-size: 28px;
+        margin-bottom: 25px;
+    }
+
+    .arabic {
+        font-size: 22px;
+        margin-bottom: 30px;
+    }
+
+    .dua-card .translate {
+        font-size: 16px;
+    }
+}
