@@ -21,17 +21,12 @@ nav {
     padding: 30px;
 }
 
-.nav-links a {
-    margin-right: 20px;
-    text-decoration: none;
-    color: #5a67b2;
-}
-
 .brand {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     font-weight: 700;
+    font-size: 18px;
     color: #5a67b2;
     margin-bottom: 5px;
 }
