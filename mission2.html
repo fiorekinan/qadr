@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dzikir Count</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav>
+          <div class="brand">Qadr</div>
+        </nav>
+    <section id="dzikir">
+        <img src="assets/cloud.png" alt="" class="cloud cloud1">
+        <img src="assets/cloud.png" alt="" class="cloud cloud2">
+        <img src="assets/cloud.png" alt="" class="cloud cloud3">
+        <img src="assets/Star.png" alt="" class="star star1">
+        <img src="assets/Star.png" alt="" class="star star2">
+        <article class="dzikir-card">
+
+            <h2>Dzikir Counter</h2>
+
+            <div class="dzikir-number" id="dzikirCount">0</div>
+            <p class="dzikir-target">Target: <span id="dzikirTarget">33</span></p>
+
+            <div class="dzikir-buttons">
+                <button id="addDzikir">+</button>
+                <button id="resetDzikir">Reset</button>
+            </div>
+
+            <p class="dzikir-notif" id="dzikirNotif"></p>
+
+        </article>
+    </section>
+
+    <footer>
+        <h2>Qadr</h2>
+        <p class="copywrite">&copy; 2026 Qadr. All rights reserved.</p>
+        <p></p>
+      </footer>
+
+    <script>
+        let count = 0;
+        const target1 = 33;
+        const target2 = 100;
+
+        const countEl = document.getElementById("dzikirCount");
+        const targetEl = document.getElementById("dzikirTarget");
+        const addBtn = document.getElementById("addDzikir");
+        const resetBtn = document.getElementById("resetDzikir");
+        const notif = document.getElementById("dzikirNotif");
+
+        targetEl.textContent = target1 + " & " + target2;
+
+        addBtn.addEventListener("click", () => {
+            count++;
+            countEl.textContent = count;
+
+            if (count === target1) {
+                notif.textContent = "MasyaAllah, 33 target tercapai!";
+            }
+
+            if (count === target2) {
+                notif.textContent = "MasyaAllah, 100 target tercapai!";
+            }
+        });
+
+        resetBtn.addEventListener("click", () => {
+            count = 0;
+            countEl.textContent = count;
+            notif.textContent = "";
+        });
+
+        resetBtn.addEventListener("click", () => {
+            count = 0;
+            countEl.textContent = count;
+            notif.textContent = "";
+        });
+    </script>
+
+
+</body>
+
+</html>

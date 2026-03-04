@@ -5,12 +5,18 @@
     font-family: 'Poppins', sans-serif;
 }
 
-body {
-    background: #1e1e1e;
+:root {
+    --primary-color: #5f8f83;
+    --secondary-color: #F4BD63;
+    --soft-green: #b7cdc4;
+    --soft-gold: #e6c786;
+    --accent-purple: #5a67b2;
+    --cream-bg: #e9e4d6;
+
 }
 
 header {
-    background: #b7cdc4;
+    background: var(--soft-green);
 }
 
 /* navbar */
@@ -27,7 +33,7 @@ nav {
     transform: translateX(-50%);
     font-weight: 700;
     font-size: 18px;
-    color: #5a67b2;
+    color: var(--accent-purple);
     margin-bottom: 5px;
 }
 
@@ -53,11 +59,11 @@ nav {
 
 .hero-content h1 {
     font-size: 200px;
-    color: #5f8f83;
+    color: var(--primary-color);
 }
 
 .hero-content p {
-    color: #5f8f83;
+    color: var(--primary-color);
 }
 
 /* images */
@@ -99,7 +105,7 @@ nav {
 
 /* about */
 #about {
-    background: #e9e4d6;
+    background: var(--cream-bg);
     padding: 120px 40px;
     text-align: center;
     position: relative;
@@ -107,7 +113,7 @@ nav {
 }
 
 .about-box {
-    background: #e6c786;
+    background: var(--soft-gold);
     padding: 30px;
     max-width: 600px;
     margin: auto;
@@ -153,11 +159,11 @@ nav {
 }
 
 .sahoor {
-    background: #6f9f91;
+    background: var(--primary-color);
 }
 
 .iftar {
-    background: #e7b356;
+    background: var(--secondary-color);
 }
 
 .dua-card h2 {
@@ -177,7 +183,7 @@ nav {
 
 /* footer */
 footer {
-    background: #6f9f91;
+    background: var(--primary-color);
 
     flex-direction: column;
     display: flex;
@@ -189,12 +195,12 @@ footer {
 
 footer h2 {
     font-size: 200px;
-    color: #f3e4c7;
+    color: var(--cream-bg);
     margin: 0;
 }
 
 .copywrite {
-    color: #f3e4c7;
+    color: var(--cream-bg);
 }
 
 /* responsive */
@@ -249,5 +255,104 @@ footer h2 {
 
     .dua-card .translate {
         font-size: 16px;
+    }
+}
+
+/* Dzikir Section */
+
+#dzikir {
+    background: var(--soft-green);
+    min-height: 100vh;
+    padding: 120px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dzikir-card {
+    background: var(--primary-color);
+    padding: 60px;
+    border-radius: 60px;
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+    color: var(--cream-bg);
+}
+
+.dzikir-card h2 {
+    font-size: 42px;
+    margin-bottom: 40px;
+}
+
+.dzikir-number {
+    font-size: 80px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.dzikir-target {
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
+.dzikir-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.dzikir-buttons button {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+#addDzikir {
+    background: var(--secondary-color);
+    color: white;
+}
+
+#resetDzikir {
+    background: var(--accent-purple);
+    color: white;
+}
+
+.dzikir-buttons button:hover {
+    transform: scale(1.05);
+}
+
+.dzikir-buttons button:active {
+    transform: scale(0.9);
+}
+
+.dzikir-notif {
+    margin-top: 30px;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--soft-gold);
+    min-height: 24px;
+}
+
+@media (max-width: 480px) {
+    #dzikir {
+        min-height: 80vh;
+        padding: 60px 15px;
+    }
+
+    .dzikir-card {
+        padding: 30px 20px;
+        border-radius: 30px;
+    }
+
+    .dzikir-number {
+        font-size: 42px;
+    }
+
+    .dzikir-notif {
+        font-size: 14px;
     }
 }
