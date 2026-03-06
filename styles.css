@@ -19,7 +19,7 @@ header {
     background: var(--soft-green);
 }
 
-/* navbar */
+/* SAHOOR & IFTAR DUA SECTION */
 nav {
     display: flex;
     justify-content: center;
@@ -37,8 +37,6 @@ nav {
     margin-bottom: 5px;
 }
 
-
-/* hero */
 .hero {
     min-height: 80vh;
     position: relative;
@@ -66,7 +64,6 @@ nav {
     color: var(--primary-color);
 }
 
-/* images */
 .cloud,
 .star {
     position: absolute;
@@ -103,7 +100,6 @@ nav {
     width: 50px;
 }
 
-/* about */
 #about {
     background: var(--cream-bg);
     padding: 120px 40px;
@@ -139,7 +135,6 @@ nav {
     right: 300px;
 }
 
-/* card */
 #dua {
     background: #efefef;
     padding: 200px 60px;
@@ -181,7 +176,6 @@ nav {
     line-height: 1.6;
 }
 
-/* footer */
 footer {
     background: var(--primary-color);
 
@@ -203,7 +197,7 @@ footer h2 {
     color: var(--cream-bg);
 }
 
-/* responsive */
+/* Responsive Sahoor and Iftar Section */
 @media (max-width: 768px) {
     .hero-content h1 {
         font-size: 60px;
@@ -258,7 +252,7 @@ footer h2 {
     }
 }
 
-/* Dzikir Section */
+/* DZIKIR SECTION */
 
 #dzikir {
     background: var(--soft-green);
@@ -337,6 +331,8 @@ footer h2 {
     min-height: 24px;
 }
 
+/* Responsive Dzikir Section */
+
 @media (max-width: 480px) {
     #dzikir {
         min-height: 80vh;
@@ -356,3 +352,171 @@ footer h2 {
         font-size: 14px;
     }
 }
+
+/* ZAKAT SECTION */
+
+.header-zakat {
+    background: var(--soft-gold);
+}
+
+#zakat {
+    background: var(--soft-gold);
+    max-height: 100vh;
+    padding: 150px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cloud-zakat {
+    position: absolute;
+    pointer-events: none;
+}
+
+.zakat-card {
+    background: var(--primary-color);
+    padding: 32px;
+    border-radius: 40px;
+    max-width: 600px;
+    width: 100%;
+    color: var(--cream-bg);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.zakat-card h2 {
+    font-size: 42px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.zakat-card label {
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.zakat-card input,
+.zakat-card select {
+    padding: 15px 45px 15px 15px;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--accent-purple);
+    text-indent: 10px;
+}
+
+
+.form-penghasilan {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+::placeholder {
+    color: var(--accent-purple);
+    font-size: 14px;
+    opacity: 50%;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-emas label, input {
+    display: grid;
+    grid-column: span 2;
+    gap: 20px;
+}
+
+#calculate-btn {
+    margin-top: 20px;
+    padding: 20px 75px;
+    border: none;
+    border-radius: 50px;
+    background: var(--secondary-color);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+    width: fit-content;
+    align-self: center;
+    font-size: 16px;
+}
+
+#calculate-btn:hover {
+    transform: scale(1.05);
+}
+
+.zakat-result {
+    margin-top: 30px;
+    background: var(--soft-green);
+    padding: 25px;
+    border-radius: 30px;
+    font-size: 16px;
+    line-height: 1.6;
+    display: none;
+}
+
+.zakat-result.show {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+.toast {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translate(-50%, -200%);
+    background: var(--secondary-color);
+    color: white;
+    padding: 18px 35px;
+    border-radius: 50px;
+    font-weight: 600;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    transition: transform 0.4s ease;
+    z-index: 9999;
+    max-width: 90%;
+    text-align: center;
+}
+
+.toast.show {
+    transform: translate(-50%, 0);
+}
+
+/* Responsive Zakat Section */
+@media (max-width: 768px) {
+    #zakat {
+        padding: 80px 20px;
+    }
+
+    .cloud-zakat {
+        display: none;
+    }
+
+    .zakat-card {
+        padding: 35px 25px;
+        border-radius: 35px;
+    }
+
+    .zakat-card h2 {
+        font-size: 28px;
+    }
+
+    .form-penghasilan {
+        grid-template-columns: 1fr;
+    }
+
+        .toast {
+        font-size: 14px;
+        padding: 16px 24px;
+    }
+}
+

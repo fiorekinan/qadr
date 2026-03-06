@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Zakat</title>
+    <link rel="stylesheet" href="styles.css"> <!--your css-->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="toast" class="toast"></div>
+    <header class="header-zakat">
+        <nav>
+            <div class="brand">Qadr</div>
+        </nav>
+    </header>
+    <main>
+        <section id="zakat">
+            <img src="assets/cloud.png" alt="" class="cloud-zakat cloud1">
+            <img src="assets/cloud.png" alt="" class="cloud-zakat cloud2">
+            <img src="assets/cloud.png" alt="" class="cloud-zakat cloud3">
+            <img src="assets/Star.png" alt="" class="star star1">
+            <img src="assets/Star.png" alt="" class="star star2">
+            <article class="zakat-card">
+
+                <h2>Kalkulator Zakat</h2>
+
+                <!-- Jenis Zakat -->
+                <label>Jenis Zakat</label>
+                <select id="zakat-type">
+                    <option value="penghasilan" class="zakat-type">Zakat Penghasilan</option>
+                    <option value="emas" class="zakat-type">Zakat Emas</option>
+                </select>
+
+                <!-- Harga Emas -->
+                <label>Harga Emas per Gram (Rp)</label>
+                <input type="text" id="gold-price" placeholder="Misalkan: 3.024.000" />
+
+                <!-- FORM PENGHASILAN -->
+                <div id="form-penghasilan" class="form-penghasilan">
+
+                    <div class="field">
+                        <label>Gaji Bulanan</label>
+                        <input type="text" id="gaji" placeholder="Masukkan Gaji">
+                    </div>
+
+                    <div class="field">
+                        <label>Penghasilan Lain</label>
+                        <input type="text" id="penghasilan-lain" placeholder="Masukkan Penghasilan">
+                    </div>
+
+                </div>
+
+                <!-- FORM EMAS -->
+                <div id="form-emas" class="hidden">
+                    <label>Jumlah Emas (gram)</label>
+                    <input type="text" id="jumlah-emas" placeholder="100" />
+                </div>
+
+                <button type="button" id="calculate-btn">Hitung Zakat</button>
+
+            </article>
+        </section>
+    </main>
+    <footer>
+        <h2>Qadr</h2>
+        <p class="copywrite">&copy; 2026 Qadr. All rights reserved.</p>
+        <p></p>
+    </footer>
+    <script>
+        function showToast(message) {
+            const toast = document.getElementById("toast");
+            toast.innerHTML = message;
+            toast.classList.add("show");
+
+            setTimeout(() => {
+                toast.classList.remove("show");
+            }, 3000);
+        }
+
+        function toggleForms() {
+
+            const type = document.getElementById("zakat-type").value;
+            const formPenghasilan = document.getElementById("form-penghasilan");
+            const formEmas = document.getElementById("form-emas");
+
+            if (type === "penghasilan") {
+                formPenghasilan.classList.remove("hidden");
+                formEmas.classList.add("hidden");
+            } else {
+                formPenghasilan.classList.add("hidden");
+                formEmas.classList.remove("hidden");
+            }
+
+        }
+
+        function cleanNumber(value) {
+            if (!value) return 0;
+            return parseFloat(value.toString().replace(/\./g, "")) || 0;
+        }
+
+        function calculateZakat() {
+
+            const type = document.getElementById("zakat-type").value;
+
+            const goldPriceInput = document.getElementById("gold-price").value;
+            const goldPrice = cleanNumber(goldPriceInput);
+
+            if (goldPrice <= 0) {
+                showToast("Masukkan harga emas terlebih dahulu");
+                return;
+            }
+
+            let nisab = 85 * goldPrice;
+            let totalHarta = 0;
+            let zakat = 0;
+
+            if (type === "penghasilan") {
+
+                if (type === "penghasilan") {
+
+                    const gaji = cleanNumber(document.getElementById("gaji").value);
+                    const lain = cleanNumber(document.getElementById("penghasilan-lain").value);
+
+                    totalHarta = gaji + lain;
+
+                    const nisabBulanan = nisab / 12;
+
+                    if (totalHarta >= nisabBulanan) {
+                        zakat = totalHarta * 0.025;
+                    }
+
+                }
+
+            } else {
+
+                const emas = parseFloat(document.getElementById("jumlah-emas").value) || 0;
+
+                totalHarta = emas * goldPrice;
+
+                if (emas >= 85) {
+                    zakat = totalHarta * 0.025;
+                }
+
+            }
+
+            if (zakat > 0) {
+
+                showToast(`
+                    ✓ Zakat dihitung <br>
+                    Total Harta: Rp ${Math.round(totalHarta).toLocaleString("id-ID")} <br>
+                    Zakat: Rp ${Math.round(zakat).toLocaleString("id-ID")}
+            `);
+
+            } else {
+
+                showToast(`
+                    ✓ Zakat dihitung <br>
+                     Total Harta: Rp ${Math.round(totalHarta).toLocaleString("id-ID")} <br>
+                    Belum mencapai nisab
+            `);
+
+            }
+
+        }
+        function formatRupiahInput(id) {
+
+            const input = document.getElementById(id);
+
+            input.addEventListener("input", function () {
+
+                let angka = this.value.replace(/\D/g, "");
+
+                if (!angka) {
+                    this.value = "";
+                    return;
+                }
+
+                this.value = Number(angka).toLocaleString("id-ID");
+
+            });
+
+        }
+
+        formatRupiahInput("gold-price");
+        formatRupiahInput("gaji");
+        formatRupiahInput("penghasilan-lain");
+
+
+        document.getElementById("zakat-type")
+            .addEventListener("change", toggleForms);
+
+        document.getElementById("calculate-btn")
+            .addEventListener("click", calculateZakat);
+
+        toggleForms();
+
+    </script>
+</body>
+
+</html>
