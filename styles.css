@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
 }
 
 :root {
@@ -19,30 +20,82 @@ header {
     background: var(--soft-green);
 }
 
+.navbar{
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    padding:30px 60px;
+    position:relative;
+}
+
+.nav-links{
+    list-style:none;
+    display:flex;
+    gap:40px;
+}
+
+.nav-links li{
+    position:relative;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:var(--primary-color);
+    font-weight:500;
+}
+
+.nav-links a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-5px;
+
+    width:0;
+    height:2px;
+
+    background:var(--primary-color);
+    transition:width 0.3s ease;
+}
+
+.nav-links a:hover::after{
+    width:100%;
+}
+
+.nav-links a:hover{
+    color:var(--accent-purple);
+}
+
+
+.brand{
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    font-weight:700;
+    font-size:20px;
+    color:var(--accent-purple);
+}
+
+.hamburger{
+    display:none;
+    flex-direction:column;
+    gap:5px;
+    cursor:pointer;
+    margin-left:auto;
+}
+
+.hamburger span{
+    width:25px;
+    height:3px;
+    background:var(--accent-purple);
+}
+
 /* SAHOOR & IFTAR DUA SECTION */
-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 30px;
-}
-
-.brand {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    font-weight: 700;
-    font-size: 18px;
-    color: var(--accent-purple);
-    margin-bottom: 5px;
-}
-
 .hero {
     min-height: 80vh;
     position: relative;
     padding: 200px 40px;
     overflow: hidden;
-
+    background-color: var(--soft-green);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -136,7 +189,7 @@ nav {
 }
 
 #dua {
-    background: #efefef;
+    background: var(--cream-bg);
     padding: 200px 60px;
     display: flex;
     justify-content: center;
@@ -197,10 +250,42 @@ footer h2 {
     color: var(--cream-bg);
 }
 
+/* Mobile Navbar */
+
+@media (max-width:768px){
+
+    .nav-links{
+        position:absolute;
+        top:80px;
+        left:0;
+        width:100%;
+        background:transparent;
+        z-index: 100;
+
+        flex-direction:column;
+        align-items:center;
+        gap:20px;
+
+        padding:30px 0;
+
+        transform:translateY(-200%);
+        transition:0.3s;
+    }
+
+    .nav-links.active{
+        transform:translateY(0);
+    }
+
+    .hamburger{
+        display:flex;
+    }
+
+}
+
 /* Responsive Sahoor and Iftar Section */
 @media (max-width: 768px) {
     .hero-content h1 {
-        font-size: 60px;
+        font-size: 80px;
     }
 
     .star {
@@ -521,11 +606,7 @@ footer h2 {
 }
 
 /* Ramadhan To Do List Section */
-.header-ramadhan-tracker {
-    background-color: var(--cream-bg);
-}
-
-#ramadan-check {
+#ramadhan-tracker {
     background: var(--cream-bg);
     padding: 50px;
 }
@@ -763,3 +844,222 @@ footer h2 {
     }
 
 }
+
+/* Imsakiyah Section */
+
+#imsakiyah{
+    background: var(--accent-purple);
+    padding:120px 40px;
+}
+
+.section-judul {
+    text-align: center;
+    font-size: 42px;
+    margin-bottom: 40px;
+    color: var(--secondary-color);
+    grid-column: 1 / -1;
+}
+
+.imsak-container{
+    max-width:1100px;
+    margin:auto;
+}
+
+.imsak-control{
+    margin-bottom:30px;
+}
+
+.imsak-control label{
+    font-weight:600;
+    color: var(--cream-bg);
+}
+
+.imsak-control select{
+    font-weight:600;
+    color: var(--accent-purple);
+}
+
+#citySelect{
+    margin-top:10px;
+    padding:12px 18px;
+    border-radius:30px;
+    border:none;
+    font-weight:600;
+}
+
+.table-wrapper{
+    overflow-x:auto;
+}
+
+.imsak-table{
+    width:100%;
+    border-collapse:collapse;
+    background: var(--cream-bg);
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.imsak-table th{
+    background: var(--secondary-color);
+    color:white;
+    padding:15px;
+}
+
+.imsak-table td{
+    padding:12px;
+    text-align:center;
+}
+
+.imsak-table tr:nth-child(even){
+    background:#f7f7f7;
+}
+
+.today{
+    background:var(--secondary-color) !important;
+    color:white;
+    font-weight:600;
+}
+
+.loading{
+    margin:20px 0;
+    color:white;
+}
+
+.error{
+    margin:20px 0;
+    color:var(--secondary-color);
+}
+
+.hidden{
+    display:none;
+}
+
+/* responsive imsakiyah */
+
+@media (max-width: 1024px){
+
+    #imsakiyah{
+        padding:100px 30px;
+    }
+
+    .section-judul{
+        font-size:34px;
+    }
+
+    .imsak-container{
+        max-width:100%;
+    }
+
+    .imsak-control label{
+        font-size:16px;
+    }
+
+    #citySelect{
+        width:100%;
+        max-width:350px;
+    }
+
+    .imsak-table th,
+    .imsak-table td{
+        padding:10px;
+        font-size:14px;
+    }
+
+}
+
+@media (max-width: 600px){
+
+    #imsakiyah{
+        padding:80px 20px;
+    }
+
+    .section-judul{
+        font-size:28px;
+        margin-bottom:30px;
+    }
+
+    .imsak-control{
+        display:flex;
+        flex-direction:column;
+    }
+
+    .imsak-control label{
+        font-size:15px;
+    }
+
+    #citySelect{
+        width:100%;
+        font-size:14px;
+        padding:10px 15px;
+    }
+
+    .imsak-table{
+        min-width:600px;
+    }
+
+    .imsak-table th{
+        font-size:13px;
+        padding:10px;
+    }
+
+    .imsak-table td{
+        font-size:13px;
+        padding:8px;
+    }
+
+    .loading,
+    .error{
+        font-size:14px;
+    }
+
+}
+
+@media (max-width: 400px){
+
+    .section-judul{
+        font-size:24px;
+    }
+
+    #citySelect{
+        font-size:13px;
+    }
+
+    .imsak-table th,
+    .imsak-table td{
+        font-size:12px;
+    }
+
+}
+
+/* BACK TO TOP BUTTON */
+
+#backToTop{
+    position:fixed;
+    bottom:30px;
+    right:30px;
+
+    width:50px;
+    height:50px;
+
+    border:none;
+    border-radius:30%;
+
+    background:var(--secondary-color);
+    color:white;
+    font-size:20px;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    display:none;
+    align-items:center;
+    justify-content:center;
+
+    transition:0.3s;
+}
+
+#backToTop:hover{
+    transform:scale(1.1);
+}
+
+

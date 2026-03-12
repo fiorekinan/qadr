@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Qadr - Ramadan Prayer Guide</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar">
+
+      <ul class="nav-links">
+        <li><a href="#Home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="mission2.html">Dzikr</a></li>
+        <li><a href="mission3.html">Zakat</a></li>
+        <li><a href="#ramadhan-tracker">Tracker</a></li>
+      </ul>
+    
+      <div class="brand">Qadr</div>
+    
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    
+    </nav>
+  </header>
+
+  <section id="#Home" class="hero">
+    <img src="assets/cloud.png" alt="" class="cloud cloud1">
+    <img src="assets/cloud.png" alt="" class="cloud cloud2">
+    <img src="assets/cloud.png" alt="" class="cloud cloud3">
+    <img src="assets/Star.png" alt="" class="star star1">
+    <img src="assets/Star.png" alt="" class="star star2">
+
+    <div class="hero-content">
+      <h1>Qadr</h1>
+      <p>A space to keep your Ramadan Productive.</p>
+    </div>
+  </section>
+
+  <main>
+
+    <section id="about">
+      <img src="assets/Star.png" alt="" class="about-star star-left">
+      <img src="assets/Star.png" alt="" class="about-star star-right">
+
+      <article class="about-box">
+        <p>
+          Qadr is a Ramadan-focused website that provides useful features such as daily supplications, dhikr reminders,
+          zakat calculation, and imsakiyah schedules. It is designed to help users stay organized and connected with
+          their worship throughout the holy month.
+        </p>
+      </article>
+    </section>
+
+    <section id="imsakiyah">
+
+      <h2 class="section-judul">Ramadan Imsakiyah Schedule</h2>
+
+      <div class="imsak-container">
+
+        <div class="imsak-control">
+          <label for="citySelect">Select City</label>
+          <select id="citySelect">
+            <option value="">Choose City</option>
+          </select>
+        </div>
+
+        <p id="loadingMsg" class="loading hidden">Memuat data...</p>
+        <p id="errorMsg" class="error hidden">Gagal memuat data</p>
+
+        <div class="table-wrapper">
+
+          <table class="imsak-table">
+
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Imsak</th>
+                <th>Subuh</th>
+                <th>Dzuhur</th>
+                <th>Ashar</th>
+                <th>Maghrib</th>
+                <th>Isya</th>
+              </tr>
+            </thead>
+
+            <tbody id="table-body">
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section id="dua">
+      <article class="dua-card sahoor">
+        <h2>Sahoor Dua</h2>
+        <p class="arabic">بِرَحْمَةِ اللَّهِ الْمُسْتَغْفِرِينَ</p>
+        <p class="translate">"May Allah send His mercy upon those who partake in suhoor."</p>
+      </article>
+
+      <article class="dua-card iftar">
+        <h2>Iftar Dua</h2>
+        <p class="arabic">
+          ذَهَبَ الظَّمَأُ وَابْتَلَّتِ الْعُرُوقُ وَثَبَتَ الأَجْرُ إِنْ شَاءَ اللَّهُ
+        </p>
+        <p class="translate">"The thirst has gone, the veins are moistened, and the reward is assured, if Allah wills."
+        </p>
+      </article>
+    </section>
+
+    <section id="ramadhan-tracker">
+      <h2 class="section-title">Ramadan To-Do List</h2>
+      <article class="check-container">
+        <!-- SHALAT -->
+        <div class="check-card shalat-card">
+          <h3>Fardhu Prayer</h3>
+
+          <label><input type="checkbox" class="shalat"> Subuh</label>
+          <label><input type="checkbox" class="shalat"> Dzuhur</label>
+          <label><input type="checkbox" class="shalat"> Ashar</label>
+          <label><input type="checkbox" class="shalat"> Maghrib</label>
+          <label><input type="checkbox" class="shalat"> Isya</label>
+
+          <div class="progress-bar">
+            <div id="dailyProgress"></div>
+          </div>
+          <p id="statusText" class="status-text"></p>
+
+          <button onclick="saveShalat()">Save</button>
+        </div>
+
+        <div class="middle-column">
+
+          <!-- QUOTE -->
+          <div class="quran-quote">
+            <img src="assets/“.png" class="quote-left">
+
+            <p>
+              Ramadhan is the month in which the Quran was revealed as a guide for humanity with clear
+              proofs of guidance and the decisive authority. So whoever is present this month, let them
+              fast. But whoever is ill or on a journey, then let them fast an equal number of days after
+              Ramadhan.
+            </p>
+
+            <span>Q.S Al-Baqarah: 185</span>
+
+            <img src="assets/”.png" class="quote-right">
+          </div>
+
+          <!-- QURAN -->
+          <div class="check-card quran-card">
+            <h3>Qur'an Recite</h3> <input type="number" id="targetPage" placeholder="Target Page"> <input type="number"
+              id="readPage" placeholder="Read Page">
+            <div class="progress-bar">
+              <div id="quranProgress"></div>
+            </div>
+            <p id="quranStatus"></p> <button onclick="saveQuran()">Save</button>
+          </div>
+
+        </div>
+
+        <!-- PUASA -->
+        <div class="check-card puasa-card">
+          <h3>Ramadhan Fasting</h3>
+          <div class="calendar" id="calendar"></div>
+
+          <div class="progress-bar">
+            <div id="fastingProgress"></div>
+          </div>
+
+          <p id="fastingStatus" class="status-text"></p>
+
+          <button onclick="saveFasting()">Save</button>
+
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <h2>Qadr</h2>
+    <p class="copywrite">&copy; 2026 Qadr. All rights reserved.</p>
+    <p></p>
+  </footer>
+
+  <button id="backToTop">↑</button>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
