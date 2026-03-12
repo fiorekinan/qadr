@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Qadr - Ramadan Productivity Guide</title>
+  <title>Qadr</title>
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="assets/favicon.png">
@@ -34,7 +34,7 @@
     </nav>
   </header>
 
-  <section id="#Home" class="hero">
+  <section id="Home" class="hero">
     <img src="assets/cloud.png" alt="" class="cloud cloud1">
     <img src="assets/cloud.png" alt="" class="cloud cloud2">
     <img src="assets/cloud.png" alt="" class="cloud cloud3">
@@ -123,72 +123,72 @@
     </section>
 
     <section id="ramadhan-tracker">
-      <h2 class="section-title">Ramadan To-Do List</h2>
+      <h2 class="section-title">Ramadan Tracker</h2>
       <article class="check-container">
-        <!-- SHALAT -->
-        <div class="check-card shalat-card">
-          <h3>Fardhu Prayer</h3>
+          <!-- SHALAT -->
+          <div class="check-card shalat-card">
+              <h3>Fardhu Prayer</h3>
 
-          <label><input type="checkbox" class="shalat"> Subuh</label>
-          <label><input type="checkbox" class="shalat"> Dzuhur</label>
-          <label><input type="checkbox" class="shalat"> Ashar</label>
-          <label><input type="checkbox" class="shalat"> Maghrib</label>
-          <label><input type="checkbox" class="shalat"> Isya</label>
+              <label><input type="checkbox" class="shalat"> Subuh</label>
+              <label><input type="checkbox" class="shalat"> Dzuhur</label>
+              <label><input type="checkbox" class="shalat"> Ashar</label>
+              <label><input type="checkbox" class="shalat"> Maghrib</label>
+              <label><input type="checkbox" class="shalat"> Isya</label>
 
-          <div class="progress-bar">
-            <div id="dailyProgress"></div>
-          </div>
-          <p id="statusText" class="status-text"></p>
+              <div class="progress-bar">
+                  <div id="dailyProgress"></div>
+              </div>
+              <p id="statusText" class="status-text"></p>
 
-          <button onclick="saveShalat()">Save</button>
-        </div>
-
-        <div class="middle-column">
-
-          <!-- QUOTE -->
-          <div class="quran-quote">
-            <img src="assets/“.png" class="quote-left">
-
-            <p>
-              Ramadhan is the month in which the Quran was revealed as a guide for humanity with clear
-              proofs of guidance and the decisive authority. So whoever is present this month, let them
-              fast. But whoever is ill or on a journey, then let them fast an equal number of days after
-              Ramadhan.
-            </p>
-
-            <span>Q.S Al-Baqarah: 185</span>
-
-            <img src="assets/”.png" class="quote-right">
+              <button onclick="saveShalat()">Save</button>
           </div>
 
-          <!-- QURAN -->
-          <div class="check-card quran-card">
-            <h3>Qur'an Recite</h3> <input type="number" id="targetPage" placeholder="Target Page"> <input type="number"
-              id="readPage" placeholder="Read Page">
-            <div class="progress-bar">
-              <div id="quranProgress"></div>
-            </div>
-            <p id="quranStatus"></p> <button onclick="saveQuran()">Save</button>
+          <div class="middle-column">
+
+              <!-- QUOTE -->
+              <div class="quran-quote">
+                  <img src="assets/“.png" class="quote-left">
+
+                  <p>
+                      Ramadhan is the month in which the Quran was revealed as a guide for humanity with clear
+                      proofs of guidance and the decisive authority. So whoever is present this month, let them
+                      fast. But whoever is ill or on a journey, then let them fast an equal number of days after
+                      Ramadhan.
+                  </p>
+
+                  <span>Q.S Al-Baqarah: 185</span>
+
+                  <img src="assets/”.png" class="quote-right">
+              </div>
+
+              <!-- QURAN -->
+              <div class="check-card quran-card">
+                  <h3>Qur'an Recite</h3> <input type="number" id="targetPage" placeholder="Target Page"> <input
+                      type="number" id="readPage" placeholder="Read Page">
+                  <div class="progress-bar">
+                      <div id="quranProgress"></div>
+                  </div>
+                  <p id="quranStatus"></p> <button onclick="saveQuran()">Save</button>
+              </div>
+
           </div>
 
-        </div>
+          <!-- PUASA -->
+          <div class="check-card puasa-card">
+              <h3>Ramadhan Fasting</h3>
+              <div class="calendar" id="calendar"></div>
 
-        <!-- PUASA -->
-        <div class="check-card puasa-card">
-          <h3>Ramadhan Fasting</h3>
-          <div class="calendar" id="calendar"></div>
+              <div class="progress-bar">
+                  <div id="fastingProgress"></div>
+              </div>
 
-          <div class="progress-bar">
-            <div id="fastingProgress"></div>
+              <p id="fastingStatus" class="status-text"></p>
+
+              <button onclick="saveFasting()">Save</button>
+
           </div>
-
-          <p id="fastingStatus" class="status-text"></p>
-
-          <button onclick="saveFasting()">Save</button>
-
-        </div>
       </article>
-    </section>
+  </section>
   </main>
 
   <footer>
@@ -199,7 +199,7 @@
 
   <button id="backToTop">↑</button>
 
-  <script src="main.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>

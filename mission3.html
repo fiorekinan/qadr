@@ -165,17 +165,17 @@
             if (zakat > 0) {
 
                 showToast(`
-                    ✓ Zakat dihitung <br>
-                    Total Harta: Rp ${Math.round(totalHarta).toLocaleString("id-ID")} <br>
+                    ✓ Zakat Counted <br>
+                    Total Amount: Rp ${Math.round(totalHarta).toLocaleString("id-ID")} <br>
                     Zakat: Rp ${Math.round(zakat).toLocaleString("id-ID")}
             `);
 
             } else {
 
                 showToast(`
-                    ✓ Zakat dihitung <br>
-                     Total Harta: Rp ${Math.round(totalHarta).toLocaleString("id-ID")} <br>
-                    Belum mencapai nisab
+                    ✓ Zakat Counted <br>
+                     Total Amount: Rp ${Math.round(totalHarta).toLocaleString("id-ID")} <br>
+                    Your wealth has not reached the nisab
             `);
 
             }
