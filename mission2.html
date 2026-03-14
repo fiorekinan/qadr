@@ -4,33 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dzikir Count</title>
+    <title>Qadr – Dzikir Count</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
 </head>
 
 <body>
     <header>
         <nav class="navbar">
-    
-          <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="mission2.html">Dzikr</a></li>
-            <li><a href="mission3.html">Zakat</a></li>
-            <li><a href="#ramadhan-tracker">Tracker</a></li>
-          </ul>
-        
-          <div class="brand">Qadr</div>
-        
-          <div class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="mission2.html">Dzikr</a></li>
+                <li><a href="mission3.html">Zakat</a></li>
+                <li><a href="#ramadhan-tracker">Tracker</a></li>
+            </ul>
+
+            <div class="brand">Qadr</div>
+
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
         </nav>
-      </header>
+    </header>
     <section id="dzikir">
         <img src="assets/cloud.png" alt="" class="cloud cloud1">
         <img src="assets/cloud.png" alt="" class="cloud cloud2">
@@ -58,7 +59,7 @@
         <h2>Qadr</h2>
         <p class="copywrite">&copy; 2026 Qadr. All rights reserved.</p>
         <p></p>
-      </footer>
+    </footer>
 
     <script>
         let count = 0;
@@ -97,6 +98,16 @@
             countEl.textContent = count;
             notif.textContent = "";
         });
+
+        // hamburger
+        const hamburger = document.getElementById("hamburger")
+        const navLinks = document.querySelector(".nav-links")
+
+        if (hamburger) {
+            hamburger.addEventListener("click", () => {
+                navLinks.classList.toggle("active")
+            })
+        }
     </script>
 
 

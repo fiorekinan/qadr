@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zakat Calculator</title>
+    <title>Qadr – Zakat Calculator</title>
     <link rel="stylesheet" href="styles.css"> <!--your css-->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
 </head>
 
 <body>
@@ -212,6 +213,16 @@
             .addEventListener("click", calculateZakat);
 
         toggleForms();
+
+        // hamburger
+        const hamburger = document.getElementById("hamburger")
+        const navLinks = document.querySelector(".nav-links")
+
+        if (hamburger) {
+            hamburger.addEventListener("click", () => {
+                navLinks.classList.toggle("active")
+            })
+        }
 
     </script>
 </body>

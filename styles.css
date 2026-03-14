@@ -259,7 +259,7 @@ footer h2 {
         top:80px;
         left:0;
         width:100%;
-        background:transparent;
+        background:var(--soft-green);
         z-index: 100;
 
         flex-direction:column;
@@ -378,6 +378,7 @@ footer h2 {
     display: flex;
     justify-content: center;
     gap: 20px;
+    z-index: 100;
 }
 
 .dzikir-buttons button {
@@ -779,7 +780,7 @@ footer h2 {
 /* responsive to do list section */
 @media (max-width:1024px){
 
-    #ramadan-check{
+    #ramadhan-tracker{
         padding:40px 60px;
     }
 
@@ -803,7 +804,7 @@ footer h2 {
 
 @media (max-width:600px){
 
-    #ramadan-check{
+    #ramadhan-tracker{
         padding:30px 60px;
     }
 
