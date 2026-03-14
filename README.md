@@ -13,7 +13,7 @@ The technologies used to develop this website include:
 - **JavaScript (Vanilla JS)** for website logic and interactivity  
 - **Google Fonts (Poppins)** for typography  
 - **MyQuran API** for retrieving prayer and imsakiyah schedule data
-- **MyQuran API** for ui design
+- **Figma** for ui design
 
 ---
 
